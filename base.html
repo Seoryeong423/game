@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .piccachubox {
+        position: absolute;
+        width: 1000px;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -500px;
+        background-image: url('lawn.png');
+        background-position: center 105%;
+        background-repeat: no-repeat;
+    }
+
+    .pic {
+        position: relative;
+        margin-top: 100px;
+        margin-left: 350px;
+        width: 300px;
+        height: 300px;
+        z-index: 1;
+        left:0px;
+        top:0px;
+    }
+
+    .controller {
+        position:relative;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .btn {
+        font-size: large;
+        color: white;
+        background-color: gray;
+        padding: 10px 10px;
+    }
+
+    .btn:hover {
+        background-color: black;
+    }
+
+    .day {
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="piccachubox">
+        <div class="day">
+            <input type="button" value="밤" onclick="
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            ">
+            <input type="button" value="낮" onclick="
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            ">
+            이 되었다.
+        </div>
+        <img class="pic" id="piccachu" src="piccachu.png"
+        onmouseover="
+        leftpx = Math.floor(Math.random()*500)-200;
+        toppx = Math.floor(Math.random()*200);
+        document.querySelector('#piccachu').style.left = leftpx + 'px';
+        document.querySelector('#piccachu').style.top = toppx + 'px';
+        "
+        onclick="
+        document.querySelector('#piccachu').src = 'monsterball.png';
+        document.querySelector('#piccachu').id = 'new';
+        ">
+    </div>
+</body>
+
+</html>
